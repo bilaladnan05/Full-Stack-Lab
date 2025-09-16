@@ -1,0 +1,284 @@
+:root {
+    --primary-color: #3f51b5;
+    --secondary-color: #f50057;
+    --background-color: #f5f7fa;
+    --text-color: #333;
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    --linear-algebra: #ff9800;
+    --os: #4caf50;
+    --full-stack: #2196f3;
+    --ai: #9c27b0;
+    --daa: #e91e63;
+    --management: #00bcd4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.timetable-container {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+.timetable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0.5rem;
+    table-layout: fixed;
+}
+
+.timetable th {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-align: center;
+    border-radius: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.timetable th:first-child {
+    width: 80px;
+}
+
+.timetable td {
+    height: 110px;
+    vertical-align: top;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timetable td.day {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    vertical-align: middle;
+    width: 80px;
+}
+
+.timetable .empty {
+    background-color: #f9f9f9;
+}
+
+.timetable .course {
+    position: relative;
+    overflow: hidden;
+}
+
+.timetable .course:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    z-index: 5;
+}
+
+.timetable .course h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.timetable .course p {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.2rem;
+}
+
+.timetable .course .location {
+    font-style: italic;
+}
+
+/* Course specific colors */
+.linear-algebra {
+    background-color: rgba(255, 152, 0, 0.15);
+    border-left: 4px solid var(--linear-algebra);
+}
+
+.os {
+    background-color: rgba(76, 175, 80, 0.15);
+    border-left: 4px solid var(--os);
+}
+
+.os-lab {
+    background-color: rgba(76, 175, 80, 0.15);
+    border-left: 4px solid var(--os);
+}
+
+.full-stack {
+    background-color: rgba(33, 150, 243, 0.15);
+    border-left: 4px solid var(--full-stack);
+}
+
+.full-stack-lab {
+    background-color: rgba(33, 150, 243, 0.15);
+    border-left: 4px solid var(--full-stack);
+}
+
+.ai {
+    background-color: rgba(156, 39, 176, 0.15);
+    border-left: 4px solid var(--ai);
+}
+
+.ai-lab {
+    background-color: rgba(156, 39, 176, 0.15);
+    border-left: 4px solid var(--ai);
+}
+
+.daa {
+    background-color: rgba(233, 30, 99, 0.15);
+    border-left: 4px solid var(--daa);
+}
+
+.management {
+    background-color: rgba(0, 188, 212, 0.15);
+    border-left: 4px solid var(--management);
+}
+
+.continued {
+    border-top: 2px dashed #ccc;
+}
+
+footer {
+    text-align: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .timetable th, .timetable .course h3 {
+        font-size: 0.85rem;
+    }
+    
+    .timetable .course p {
+        font-size: 0.75rem;
+    }
+    
+    .timetable td {
+        padding: 0.6rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        margin: 1rem;
+    }
+    
+    .timetable th:first-child, .timetable td.day {
+        width: 60px;
+    }
+    
+    .timetable td {
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .timetable {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .timetable th, .timetable td {
+        white-space: normal;
+    }
+    
+    .timetable td {
+        height: 120px;
+        min-width: 130px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .timetable td {
+        min-width: 120px;
+        padding: 0.5rem;
+    }
+    
+    .timetable th {
+        padding: 0.5rem;
+    }
+}
+    
+    
+    .time-column {
+        display: flex;
+    }
+    
+    .time-cell {
+        width: 120px;
+        min-width: 120px;
+        height: 60px;
+    }
+    
+    .course-cell {
+        flex: 1;
+    }
+
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .time-cell {
+        width: 100px;
+        min-width: 100px;
+    }
+}
